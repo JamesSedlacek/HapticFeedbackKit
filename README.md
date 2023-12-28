@@ -13,7 +13,7 @@
 </p>
 
 ## Description
-`HapticFeedbackKit` is a SwiftUI library designed to manage haptic feedback. <br>
+`HapticFeedbackKit` is a SwiftUI library for managing haptic feedback. <br>
 The primary purpose of this package is to provide users with the ability to enable or disable haptic feedback within the application.
 
 <br>
