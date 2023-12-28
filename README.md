@@ -9,7 +9,7 @@
 
 
 <p align="left">
-  <img src = "https://github.com/JamesSedlacek/HapticFeedbackKit/blob/main/Assets/Settings.png" height="250">
+  <img src = "https://github.com/JamesSedlacek/HapticFeedbackKit/blob/main/Assets/Settings.png" height="200">
 </p>
 
 ## Description
