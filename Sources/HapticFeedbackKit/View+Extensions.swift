@@ -7,7 +7,7 @@
 import SwiftUI
 
 extension View {
-    public func hapticFeedback<T: Equatable>(feedback: SensoryFeedback, trigger: T) -> some View {
+    public func hapticFeedback<T: Equatable>(_ feedback: SensoryFeedback, trigger: T) -> some View {
         modifier(HapticFeedbackModifier(feedback: feedback, trigger: trigger))
     }
 }
