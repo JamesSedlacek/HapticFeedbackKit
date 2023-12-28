@@ -10,19 +10,21 @@ struct HapticFeedbackModifier<T: Equatable>: ViewModifier {
     @Environment(\.hapticFeedbackProvider)
     private var hapticFeedbackProvider
     private let feedback: SensoryFeedback
-    private let trigger: T
+    @State private var trigger: T
+    @State private var toggle = false
 
     init(feedback: SensoryFeedback, trigger: T) {
         self.feedback = feedback
-        self.trigger = trigger
+        self._trigger = State(initialValue: trigger)
     }
 
     func body(content: Content) -> some View {
-        if hapticFeedbackProvider.isEnabled {
-            content
-                .sensoryFeedback(feedback, trigger: trigger)
-        } else {
-            content
-        }
+        content
+            .sensoryFeedback(feedback, trigger: toggle)
+            .onChange(of: trigger) { _, _ in
+                if hapticFeedbackProvider.isEnabled {
+                    toggle.toggle()
+                }
+            }
     }
 }
