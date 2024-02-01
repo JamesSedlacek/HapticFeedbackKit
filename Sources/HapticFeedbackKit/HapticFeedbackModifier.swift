@@ -7,20 +7,14 @@
 import SwiftUI
 
 struct HapticFeedbackModifier<T: Equatable>: ViewModifier {
-    @Environment(\.hapticFeedbackProvider)
-    private var hapticFeedbackProvider
-    private let feedback: SensoryFeedback
-    private let trigger: T
-
-    init(feedback: SensoryFeedback, trigger: T) {
-        self.feedback = feedback
-        self.trigger = trigger
-    }
+    @HapticFeedbackProvider private var isHapricEnabled
+    let feedback: SensoryFeedback
+    let trigger: T
 
     func body(content: Content) -> some View {
         content
             .sensoryFeedback(trigger: trigger) { oldValue, newValue in
-                return hapticFeedbackProvider.isEnabled ? feedback : nil
+                isHapricEnabled ? feedback : nil
             }
     }
 }
