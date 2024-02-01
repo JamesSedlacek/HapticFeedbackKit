@@ -7,10 +7,10 @@
 import SwiftUI
 
 public struct HapticFeedbackToggle: View {
-    @HapticFeedbackProvider private var isHapricEnabled
+    @HapticFeedbackProvider private var isHapticEnabled
 
     public var body: some View {
-        Toggle(isOn: $isHapricEnabled) { }
+        Toggle(isOn: $isHapticEnabled) { }
     }
 }
 
